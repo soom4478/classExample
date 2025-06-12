@@ -15,6 +15,10 @@ namespace classExample
             {
                 Console.WriteLine("부모 메서드");
             }
+            public virtual void Method0()
+            {
+                Console.WriteLine("자식 메서드");
+            }
 
             public static int counter = 0;
             public void CounterParent()
@@ -30,6 +34,10 @@ namespace classExample
         {
             public new string variable = "하이딩";
             public new void Method()
+            {
+                Console.WriteLine("자식 메서드");
+            }
+            public override void Method0()
             {
                 Console.WriteLine("자식 메서드");
             }
@@ -56,6 +64,10 @@ namespace classExample
             Console.WriteLine((c as Parent).variable);
             c.Method();
             ((Parent)c).Method(); // 하이딩 된 부모의 메서드 접근
+
+            //오버라이딩
+            c.Method();
+            ((Parent)c).Method(); // 오버라이딩 된 부모의 메서드 접근(자식 메서드 내용으로 덮어써짐)
 
             Child childA = new Child();
             Child childB = new Child("string");
