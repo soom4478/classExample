@@ -28,8 +28,8 @@ namespace classExample
         }
          class Child : Parent
         {
-            public string variable = "하이딩";
-            public void Method()
+            public new string variable = "하이딩";
+            public new void Method()
             {
                 Console.WriteLine("자식 메서드");
             }
